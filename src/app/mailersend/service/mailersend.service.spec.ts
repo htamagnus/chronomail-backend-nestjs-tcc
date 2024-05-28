@@ -1,12 +1,42 @@
 import { HttpService } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
-import { of } from 'rxjs';
 import { SendEmailInterface } from '../interface/mailer-send.interface';
 import { MailerSendService } from './mailersend.service';
+import { MailerSend, EmailParams, Recipient, Sender } from 'mailersend';
 
-describe('SendgridService', () => {
-  let sendGridService: MailerSendService;
+jest.mock('mailersend', () => {
+  return {
+    MailerSend: jest.fn().mockImplementation(() => {
+      return {
+        email: {
+          send: jest.fn(),
+        },
+      };
+    }),
+    EmailParams: jest.fn().mockImplementation(() => {
+      return {
+        setFrom: jest.fn().mockReturnThis(),
+        setTo: jest.fn().mockReturnThis(),
+        setSubject: jest.fn().mockReturnThis(),
+        setHtml: jest.fn().mockReturnThis(),
+        setText: jest.fn().mockReturnThis(),
+        setCc: jest.fn().mockReturnThis(),
+        setBcc: jest.fn().mockReturnThis(),
+      };
+    }),
+    Recipient: jest.fn().mockImplementation((email: string, name: string) => {
+      return { email, name };
+    }),
+    Sender: jest.fn().mockImplementation((email: string, name: string) => {
+      return { email, name };
+    }),
+  };
+});
+
+describe('MailerSendService', () => {
+  let mailerSendService: MailerSendService;
   let httpService: HttpService;
+  let mailerSend: MailerSend;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,12 +51,15 @@ describe('SendgridService', () => {
       ],
     }).compile();
 
-    sendGridService = module.get<MailerSendService>(MailerSendService);
+    mailerSendService = module.get<MailerSendService>(MailerSendService);
     httpService = module.get<HttpService>(HttpService);
+
+    mailerSend = new MailerSend({ apiKey: 'test' });
+    mailerSendService['mailersend'] = mailerSend;
   });
 
   it('should be defined', () => {
-    expect(sendGridService).toBeDefined();
+    expect(mailerSendService).toBeDefined();
     expect(httpService).toBeDefined();
   });
 
@@ -48,14 +81,15 @@ describe('SendgridService', () => {
         html: 'dsadas',
         text: 'dsadas',
       };
-      jest
-        .spyOn(httpService, 'post')
-        .mockReturnValueOnce(of({ status: 202, statusText: 'ACCEPTED', config: {}, headers: {}, data: '' }));
+
+      (mailerSend.email.send as jest.Mock).mockResolvedValueOnce(undefined);
+
       // Act
-      const result = await sendGridService.sendEmail(data);
+      const result = await mailerSendService.sendEmail(data);
+
       // Assert
       expect(result).toBeTruthy();
-      expect(httpService.post).toBeCalledTimes(1);
+      expect(mailerSend.email.send).toBeCalledTimes(1);
     });
   });
 });
