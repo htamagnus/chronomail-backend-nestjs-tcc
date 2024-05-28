@@ -1,10 +1,10 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
-import { SendgridService } from './service/sendgrid.service';
+import { MailerSendService } from './service/sendgrid.service';
 
 @Module({
   imports: [HttpModule],
-  providers: [SendgridService],
-  exports: [SendgridService],
+  providers: [MailerSendService],
+  exports: [MailerSendService],
 })
 export class SendgridModule {}

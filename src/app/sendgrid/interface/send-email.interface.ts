@@ -1,36 +1,9 @@
-interface To {
-  email: string;
-  name: string;
-}
-
-interface Cc {
-  email: string;
-  name: string;
-}
-
-interface Bcc {
+interface Recipient {
   email: string;
   name: string;
 }
 
 interface From {
-  email: string;
-  name: string;
-}
-
-interface Personalization {
-  to: To[];
-  cc?: Cc[];
-  bcc?: Bcc[];
-  from?: From;
-}
-
-interface From2 {
-  email: string;
-  name: string;
-}
-
-interface ReplyTo {
   email: string;
   name: string;
 }
@@ -41,9 +14,11 @@ interface Content {
 }
 
 export interface SendEmailInterface {
-  personalizations: Personalization[];
-  from: From2;
-  reply_to: ReplyTo;
+  from: From;
+  to: Recipient[];
+  cc?: Recipient[];
+  bcc?: Recipient[];
   subject: string;
-  content: Content[];
+  html: string;
+  text: string;
 }

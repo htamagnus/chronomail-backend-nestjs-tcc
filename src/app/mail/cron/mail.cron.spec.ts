@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SendgridService } from '../../sendgrid/service/sendgrid.service';
+import { MailerSendService } from '../../sendgrid/service/sendgrid.service';
 import { MailEntity } from '../mail.entity';
 import { MailService } from '../mail.service';
 import { MailCron } from './mail.cron';
@@ -7,7 +7,7 @@ import { MailCron } from './mail.cron';
 describe('MailCron', () => {
   let mailCron: MailCron;
   let mailService: MailService;
-  let sendGridService: SendgridService;
+  let sendGridService: MailerSendService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,7 +21,7 @@ describe('MailCron', () => {
           },
         },
         {
-          provide: SendgridService,
+          provide: MailerSendService,
           useValue: {
             sendEmail: jest.fn(),
           },
@@ -31,7 +31,7 @@ describe('MailCron', () => {
 
     mailCron = module.get<MailCron>(MailCron);
     mailService = module.get<MailService>(MailService);
-    sendGridService = module.get<SendgridService>(SendgridService);
+    sendGridService = module.get<MailerSendService>(MailerSendService);
   });
 
   it('should be defined', () => {

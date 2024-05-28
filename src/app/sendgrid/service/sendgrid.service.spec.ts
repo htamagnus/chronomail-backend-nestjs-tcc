@@ -2,16 +2,16 @@ import { HttpService } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
 import { of } from 'rxjs';
 import { SendEmailInterface } from '../interface/send-email.interface';
-import { SendgridService } from './sendgrid.service';
+import { MailerSendService } from './sendgrid.service';
 
 describe('SendgridService', () => {
-  let sendGridService: SendgridService;
+  let sendGridService: MailerSendService;
   let httpService: HttpService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        SendgridService,
+        MailerSendService,
         {
           provide: HttpService,
           useValue: {
@@ -21,7 +21,7 @@ describe('SendgridService', () => {
       ],
     }).compile();
 
-    sendGridService = module.get<SendgridService>(SendgridService);
+    sendGridService = module.get<MailerSendService>(MailerSendService);
     httpService = module.get<HttpService>(HttpService);
   });
 
@@ -34,31 +34,19 @@ describe('SendgridService', () => {
     it('should send an email with success', async () => {
       // Arrange
       const data: SendEmailInterface = {
-        personalizations: [
-          {
-            to: [
-              {
-                name: 'Cliente',
-                email: 'cliente@email.com',
-              },
-            ],
-          },
-        ],
         from: {
-          email: 'leonardo@tracontecnologia.com',
-          name: 'Leonardo',
+          email: 'dsadas',
+          name: 'dsadas',
         },
-        reply_to: {
-          email: 'suporte@tracontecnologia.com',
-          name: 'Suporte',
-        },
-        subject: 'Sua fatura chegou!',
-        content: [
+        to: [
           {
-            type: 'text/html',
-            value: '<p>Sua fatura chegou!</p>',
+            email: 'dsadas',
+            name: 'dsadas',
           },
         ],
+        subject: 'dsadas',
+        html: 'dsadas',
+        text: 'dsadas',
       };
       jest
         .spyOn(httpService, 'post')
