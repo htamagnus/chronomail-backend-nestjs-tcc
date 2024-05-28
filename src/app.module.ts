@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SendgridModule } from './app/sendgrid/sendgrid.module';
+import { MailerSendModule } from './app/mailersend/mailersend.module';
 import { MailModule } from './app/mail/mail.module';
 import { ScheduleModule } from '@nestjs/schedule';
 
@@ -20,7 +20,7 @@ import { ScheduleModule } from '@nestjs/schedule';
       driver: require('mysql2')
     }),
     ScheduleModule.forRoot(),
-    SendgridModule,
+    MailerSendModule,
     MailModule,
   ],
   controllers: [],

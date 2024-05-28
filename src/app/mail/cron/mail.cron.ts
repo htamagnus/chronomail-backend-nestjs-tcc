@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
-import { SendEmailInterface } from '../../sendgrid/interface/send-email.interface';
-import { MailerSendService } from '../../sendgrid/service/sendgrid.service';
+import { SendEmailInterface } from 'src/app/mailersend/interface/mailer-send.interface';
+import { MailerSendService } from '../../mailersend/service/mailersend.service';
 import { MailStatusEnum } from '../enum/mail-status.enum';
 import { MailService } from '../mail.service';
 

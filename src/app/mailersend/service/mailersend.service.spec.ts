@@ -1,8 +1,8 @@
 import { HttpService } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
 import { of } from 'rxjs';
-import { SendEmailInterface } from '../interface/send-email.interface';
-import { MailerSendService } from './sendgrid.service';
+import { SendEmailInterface } from '../interface/mailer-send.interface';
+import { MailerSendService } from './mailersend.service';
 
 describe('SendgridService', () => {
   let sendGridService: MailerSendService;

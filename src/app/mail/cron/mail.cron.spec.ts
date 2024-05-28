@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MailerSendService } from '../../sendgrid/service/sendgrid.service';
+import { MailerSendService } from '../../mailersend/service/mailersend.service';
 import { MailEntity } from '../mail.entity';
 import { MailService } from '../mail.service';
 import { MailCron } from './mail.cron';

@@ -1,5 +1,5 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { SendEmailInterface } from '../interface/send-email.interface';
+import { SendEmailInterface } from '../interface/mailer-send.interface';
 import { Recipient, Sender } from 'mailersend';
 import { EmailParams } from 'mailersend';
 import { MailerSend } from 'mailersend';

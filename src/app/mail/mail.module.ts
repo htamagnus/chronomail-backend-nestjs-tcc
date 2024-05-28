@@ -4,10 +4,10 @@ import { MailEntity } from './mail.entity';
 import { MailService } from './mail.service';
 import { MailController } from './mail.controller';
 import { MailCron } from './cron/mail.cron';
-import { SendgridModule } from '../sendgrid/sendgrid.module';
+import { MailerSendModule } from '../mailersend/mailersend.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([MailEntity]), SendgridModule],
+  imports: [TypeOrmModule.forFeature([MailEntity]), MailerSendModule],
   providers: [MailService, MailCron],
   controllers: [MailController],
 })
