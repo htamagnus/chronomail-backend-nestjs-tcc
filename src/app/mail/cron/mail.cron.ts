@@ -13,17 +13,12 @@ export class MailCron {
 
   @Cron(CronExpression.EVERY_10_SECONDS)
   async handler() {
-    const now = new Date();
     const mailList = await this.mailService.findAll({
-      dueDateLte: now.toISOString(),
+      dueDateLte: new Date().toISOString(),
       status: MailStatusEnum.WAITING,
     });
 
     for (const mail of mailList) {
-      const dueDate = new Date(mail.dueDate);
-      
-      // Verificar se a data de vencimento é anterior ou igual a agora
-      if (dueDate <= now) {
         const data: SendEmailInterface = {
           from: {
             email: 'no-reply@trial-7dnvo4dz33xl5r86.mlsender.net',
@@ -50,4 +45,3 @@ export class MailCron {
       }
     }
   }
-}
