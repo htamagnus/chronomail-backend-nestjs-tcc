@@ -1,7 +1,7 @@
 {
   "name": "chronomail-backend-nestjs-tcc",
   "version": "1.0",
-  "description": "Sistema de Agendamento de Envio Automático de E-mails",
+  "description": "Sistema de Agendamento de Envio Automático de E-mails.",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
