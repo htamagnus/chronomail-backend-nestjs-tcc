@@ -18,8 +18,7 @@ import { ScheduleModule } from '@nestjs/schedule';
       username: process.env.MYSQLUSER,
       password: process.env.MYSQLPASSWORD,
       synchronize: true,
-      entities: [__dirname + '/**/*.entity{.js,.ts}'],
-      driver: require('mysql2')
+      entities: [__dirname + '/**/*.entity{.js,.ts}']
     }),
     ScheduleModule.forRoot(),
     MailerSendModule,
