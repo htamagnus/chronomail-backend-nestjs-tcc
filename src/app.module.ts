@@ -7,14 +7,16 @@ import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,  // Torna as variáveis de ambiente disponíveis globalmente
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
-      port: Number(process.env.DB_PORT),
-      database: process.env.DB_DATABASE,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
+      host: process.env.MYSQLHOST,
+      port: Number(process.env.MYSQLPORT),
+      database: process.env.MYSQLDATABASE,
+      username: process.env.MYSQLUSER,
+      password: process.env.MYSQLPASSWORD,
       synchronize: true,
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
       driver: require('mysql2')
