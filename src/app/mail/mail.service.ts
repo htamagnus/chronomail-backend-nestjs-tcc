@@ -29,8 +29,12 @@ export class MailService {
   }
 
   async updateStatus(id: string, status: MailStatusEnum): Promise<void> {
-    const mail = await this.mailRepository.findOneOrFail({ where: { id } });
-    this.mailRepository.merge(mail, { status });
-    await this.mailRepository.save(mail);
+    try{
+      const mail = await this.mailRepository.findOneOrFail({ where: { id } });
+      this.mailRepository.merge(mail, { status });
+      await this.mailRepository.save(mail);
+    } catch (error) {
+      throw new Error(`Erro ao atualizar status do e-mail: ${error.message}`);
+    }
   }
 }

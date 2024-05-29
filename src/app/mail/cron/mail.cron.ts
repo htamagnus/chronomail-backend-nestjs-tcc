@@ -39,9 +39,14 @@ export class MailCron {
           html: mail.body,
           text: mail.body
         };
-        await this.mailSendService.sendEmail(data);
-        await this.mailService.updateStatus(mail.id, MailStatusEnum.SENT);
-        this.logger.log('E-mail enviado com sucesso');
+        try {
+          await this.mailSendService.sendEmail(data);
+          await this.mailService.updateStatus(mail.id, MailStatusEnum.SENT);
+          this.logger.log('E-mail enviado com sucesso');
+          this.logger.log(`Status atualizado para ${MailStatusEnum.SENT}`)
+        } catch (error) {
+          this.logger.error('Erro ao enviar e-mail', error);
+        }
       }
     }
   }
