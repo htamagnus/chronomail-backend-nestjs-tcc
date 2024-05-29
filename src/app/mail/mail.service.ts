@@ -29,7 +29,7 @@ export class MailService {
   }
 
   async updateStatus(id: string, status: MailStatusEnum): Promise<void> {
-    const mail = await this.mailRepository.findOneOrFail({ where: { id } });
+    const mail = await this.mailRepository.findOneOrFail(id);
     this.mailRepository.merge(mail, { status });
     await this.mailRepository.save(mail);
   }
