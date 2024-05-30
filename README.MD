@@ -4,12 +4,17 @@
 [mysql_BADGE]: https://img.shields.io/badge/mysql-3178C6?logo=mysql&logoColor=white&style=for-the-badge
 [react_BADGE]: https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge
 [styled_BADGE]: https://img.shields.io/badge/styledcomponents-C567B2?logo=styledcomponents&logoColor=black&style=for-the-badge
+[mailer_BADGE]: https://img.shields.io/badge/MailerSend-00b0f0?logo=mailersend&logoColor=white&style=for-the-badge
+[railway_BADGE]: https://img.shields.io/badge/Railway-0B0D0E?logo=railway&logoColor=white&style=for-the-badge
+[vercel_BADGE]: https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge
+[postman_BADGE]: https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white&style=for-the-badge
+[vscode_BADGE]: https://img.shields.io/badge/VS%20Code-007ACC?logo=visual-studio-code&logoColor=white&style=for-the-badge
 
-<h1 align="center" style="font-weight: bold;">ChronoMail: Agendador de E-mails Automatizados com Cron Job - Back end 🚀</h1>
+<h1 align="center" style="font-weight: bold;">ChronoMail: Agendador de E-mails Automatizados com Cron Job - Back end 🕰️📧</h1>
 
 <div align="center">
   
-Adicionar Imagem 
+<img src="./readme/swagger.png">
 
 </div>
 
@@ -21,29 +26,34 @@ Adicionar Imagem
 ![mysql][mysql_BADGE]
 ![react][react_BADGE]
 ![styled][styled_BADGE]
+![mailer][mailer_BADGE]
+![postman][postman_BADGE]
+![ralway][railway_BADGE]
+![vercel][vercel_BADGE]
+![vscode][vscode_BADGE]
 
 </div>
 
 <p align="center">
- <a href="#descricao">Descrição 🚀</a> • 
-<a href="#requisitos">Requisitos Funcionais e Requisitos Não Funcionais 🚀</a> • 
-<a href="#diagrama">Diagrama de Caso de Uso 🚀</a> • 
-<a href="#diagrama_classes">Diagrama de Classes 🚀</a> •
-<a href="#tecnologias">Tecnologias Utilizadas 🚀</a> •
- <a href="#pre-requisitos">Pré-requisitos 🛠️ </a> •
- <a href="#back-end">Instalação Back-end 🚀 </a> •
- <a href="#contribuicao">Contribuições 🤝</a>
+  <a href="#descricao">Descrição 📄</a><br>
+  <a href="#requisitos">Requisitos Funcionais e Requisitos Não Funcionais 📋</a><br>
+  <a href="#diagrama">Diagrama de Caso de Uso 🖥️</a><br>
+  <a href="#diagrama_classes">Diagrama de Classes 📚</a><br>
+  <a href="#tecnologias">Tecnologias Utilizadas 💻</a><br>
+  <a href="#pre-requisitos">Pré-requisitos 🛠️</a><br>
+  <a href="#back-end">Configuração Back-end ⚙️</a><br>
+  <a href="#contribuicao">Contribuições 🤝</a>
 </p>
 
-<h2 id="descricao"> Descrição 🚀 </h2>
-Este é um projeto feito para o meu tcc, onde construi uma solução full stack que permite aos usuários agendar o envio de e-mails personalizados em uma data específica. A interface de usuário (UI) em React permite a inserção de dados como nome completo, e-mail, data de envio, assunto e mensagem. O back-end, utilizando NestJS, processará essas requisições
-e armazenará os dados em um banco de dados MySQL. Um cron job programado realizará o envio dos e-mails na data especificada, utilizando a API do MailerSend. O nome ChronoMail conjuga o conceito de tempo (Chrono), com o foco da aplicação (Mail), além de especificar o método de automatização (Cron Job).
+<h2 id="descricao"> Descrição 📄</h2>
+Este é um projeto feito para o meu tcc, onde construi uma solução <strong>full stack</strong> que permite aos usuários agendar o envio de e-mails personalizados em uma data específica. A interface de usuário (UI) em <strong>React</strong> permite a inserção de dados como nome completo, e-mail, data de envio, assunto e mensagem. O back-end, utilizando <strong>NestJS</strong>, processará essas requisições
+e armazenará os dados em um banco de dados <strong>MySQL</strong>. Um cron job programado realizará o envio dos e-mails na data especificada, utilizando a API do <strong>MailerSend</strong>. O nome <strong>ChronoMail</strong> conjuga o conceito de tempo (Chrono), com o foco da aplicação (Mail), além de especificar o método de automatização (Cron Job).
 
 ---
 
-<h2 id="requisitos"> Requisitos Funcionais e Requisitos Não Funcionais 🚀 </h2>
+<h2 id="requisitos"> Requisitos Funcionais e Requisitos Não Funcionais 📋 </h2>
 
-### Requisitos Funcionais (RF):
+### Requisitos Funcionais (RF) ✅:
 RF1: Agendamento de E-mails
 Os usuários devem poder agendar e-mails fornecendo as seguintes informações: nome, email do destinatário, data de envio, assunto e mensagem
 
@@ -54,7 +64,7 @@ RF3: Confirmação de Agendamento
 Os usuários devem receber uma confirmação após agendarem um e-mail, indicando que o agendamento foi bem-sucedido.
 
 
-### Requisitos Não Funcionais (RNF):
+### Requisitos Não Funcionais (RNF) ❌:
 RNF1: Usabilidade
 A interface de usuário deve ser intuitiva, permitindo o agendamento de e-mails de maneira simples e direta.
 
@@ -75,30 +85,36 @@ O sistema deve estar em conformidade com regulamentos de proteção de dados e p
 
 ---
 
-<h2 id="diagrama"> Diagrama de Caso de Uso 🚀 </h2>
-Inserir imagem
+<h2 id="diagrama"> Diagrama de Caso de Uso 🖥️ </h2>
+<img src="./readme/diagrama-caso-uso.png">
+
 
 **Descrição:** O usuário preenche e submete o formulário de agendamento de e-mails 
 com os dados do destinatário, data de envio, assunto e corpo do e-mail. O sistema 
 valida as informações e as armazena no banco de dados para envio futuro.
+
 **Ator Primário:** Usuário
+
 **Fluxo Principal:**
 1. Usuário seleciona a opção para agendar um novo e-mail.
 2. Usuário preenche o formulário com todos os detalhes necessários.
 3. Sistema valida as informações.
 4. Sistema salva o agendamento no banco de dados.
 5. Sistema mostra uma mensagem de sucesso.
+
 **Fluxo Alternativo:** Caso alguma informação esteja inválida, o sistema alerta o 
 usuário e solicita a correção dos dados.
+
 **Pós-condições:** E-mail é agendado para ser enviado automaticamente na data e 
 hora especificadas
 
 ---
 
-<h2 id="diagrama"> Diagrama de Classes 🚀 </h2>
+<h2 id="diagrama_classes"> Diagrama de Classes 📚 </h2>
+<img src="./readme/diagrama-classes.png">
 
-**Entidade:**
-**Mail (E-mail Agendado)**
+<h3>Entidade: Mail (E-mail Agendado)</h3>
+
 - **ID (Primary Key, UUID):** Identificador único do e-mail agendado.
 - **DestinationName (String):** Nome do destinatário do e-mail.
 - **DestinationAddress (String):** Endereço de e-mail do destinatário.
@@ -112,44 +128,44 @@ criado.
 
 ---
 
-<h2 id="tecnologias"> Tecnologias Utilizadas 🚀 </h2>
+<h2 id="tecnologias"> Tecnologias Utilizadas 💻 </h2>
 
-**Front-end**
-**React:** Usado para construir a interface do usuário devido à sua eficiência em
+<h3>Front-end 🎨</h3>
+
+- **React:** Usado para construir a interface do usuário devido à sua eficiência em
 renderização e vasto ecossistema de componentes reutilizáveis.
 
 
-**Back-end**
-**NestJS:** Framework de backend escolhido por sua arquitetura modular e
+<h3>Back-end 🔧</h3>
+
+- **NestJS:** Framework de backend escolhido por sua arquitetura modular e
 integração eficiente com TypeScript, melhorando a qualidade do código e
 produtividade
-**MySQL:** Sistema de gerenciamento de banco de dados relacional, utilizado
+- **MySQL:** Sistema de gerenciamento de banco de dados relacional, utilizado
 para armazenar informações de agendamentos de e-mails e dados de
 usuários
-**Cron Jobs:** Implementados dentro do NestJS para gerenciar o agendamento
+- **Cron Jobs:** Implementados dentro do NestJS para gerenciar o agendamento
 e o envio de e-mails.
-**Swagger API:** Utilizado para a documentação da API.
+- **Swagger API:** Utilizado para a documentação da API.
 
 
-**Integração e Serviços Externos:**
-**MailerSend:** Utilizada para o envio de e-mails. A escolha por MailerSend se
+<h3>Integração e Serviços Externos 🌐</h3>
+
+- **MailerSend:** Utilizada para o envio de e-mails. A escolha por MailerSend se
 dá pela sua robustez, capacidade de escalabilidade e funcionalidades
 avançadas.
 
-**Ferramentas de Desenvolvimento e Suporte:**
-**Visual Studio Code (VS Code):** Editor de código escolhido por sua
-flexibilidade, vasta gama de extensões disponíveis e suporte integrado para
-desenvolvimento com React e NestJS.
-**GitHub:** Para versionamento de código e colaboração entre desenvolvedores.
-**Postman:** Ferramenta para testar e documentar as APIs desenvolvidas,
-permitindo validar todas as requisições e respostas do backend antes da
-integração com o frontend.
-**Railway:** Deploy para a parte de back end.
-**Vercel:** Deploy para a parte de front end.
+<h3>Ferramentas de Desenvolvimento e Suporte 🛠️</h3>
+
+- **Visual Studio Code (VS Code):** Editor de código escolhido por sua flexibilidade, vasta gama de extensões disponíveis e suporte integrado para desenvolvimento com React e NestJS.
+- **GitHub:** Para versionamento de código e colaboração entre desenvolvedores.
+- **Postman:** Ferramenta para testar e documentar as APIs desenvolvidas, permitindo validar todas as requisições e respostas do backend antes da integração com o frontend.
+- **Railway:** Deploy para a parte de back end.
+- **Vercel:** Deploy para a parte de front end.
 
 ---
 
-<h2 id="pre-requisitos"> Pré-requisitos 🛠️ </h2>
+<h2 id="pre-requisitos"> Pré-requisitos para rodar o projeto 🛠️ </h2>
 Certifique-se de ter instalados antes de executar o projeto:
 
 - Node.js - (v.20.10.0)
@@ -158,7 +174,7 @@ Certifique-se de ter instalados antes de executar o projeto:
 
 ---
 
-<h2 id="back-end">Instalação Back-end ⚙️ </h2>
+<h2 id="back-end">Configuração e Instalação Back-end ⚙️ </h2>
 1. Clone este repositório para o seu ambiente local.
 
 2. Navegue até a pasta back-end e execute o seguinte comando para instalar as dependências (Node 20):
@@ -177,48 +193,26 @@ npm start
 - Crie um banco de dados MySQL para o projeto;
 - Atualize as configurações do banco de dados no arquivo .env na raiz da pasta back-end;
 ```bash
-DB_HOST=
-DB_PORT=
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
+PORT=
+MYSQLUSER=
+MYSQLPORT=
+MYSQLPASSWORD=
+MYSQLHOST=
+MYSQLDATABASE=
+
 ```
 
-<h1 align="center">
-
-![image](https://github.com/htamagnus/to-do-fullstack-nestjs-react/assets/85269068/210918a0-c447-4971-bf48-d36fc71542b4)
-
-</h1>
-
 ---
 
-
-### Swagger 📖
-A documentação da API está disponível através do Swagger. Após iniciar o servidor, acesse http://localhost:3000/swagger para explorar e interagir com a API.
-
-<h1 align="center">
-
-![image](https://github.com/htamagnus/to-do-fullstack-nestjs-react/assets/85269068/9ea4dedc-383a-48b2-b6e3-c27b25424b59)
-
-</h1>
-
----
-
-### Testes unitários ✅ 
-
-Foram implementados testes unitários para garantir a integridade dos serviços e controladores. Execute os testes com o seguinte comando:
-
+### Configuração MailerSend 📧
+- Crie uma conta no MailerSend e crie uma API key para o projeto;
+- Configure um domínio para o email e insira no projeto;
+- Insira a api key no env:
 ```bash
-npm run test
+MAILSENDER_KEY= 
+MAILSENDER_URL=
+
 ```
-
-<h1 align="center">
-
-![image](https://github.com/htamagnus/to-do-fullstack-nestjs-react/assets/85269068/ab96e2ce-caab-42f1-b8be-5bab2efc2eea)
-
-![image](https://github.com/htamagnus/to-do-fullstack-nestjs-react/assets/85269068/a5e65dae-0c68-4d3f-8974-51bf17d14258)
-
-</h1>
 
 ---
 
