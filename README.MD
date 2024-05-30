@@ -14,7 +14,7 @@
 
 <div align="center">
   
-<img src="./readme/swagger.png">
+<img src="https://images2.imgbox.com/f8/ff/0nMYpZPx_o.png">
 
 </div>
 
@@ -86,7 +86,7 @@ O sistema deve estar em conformidade com regulamentos de proteção de dados e p
 ---
 
 <h2 id="diagrama"> Diagrama de Caso de Uso 🖥️ </h2>
-<img src="./readme/diagrama-caso-uso.png">
+<img src="https://images2.imgbox.com/c5/2f/8w9udvw4_o.png">
 
 
 **Descrição:** O usuário preenche e submete o formulário de agendamento de e-mails 
@@ -111,7 +111,7 @@ hora especificadas
 ---
 
 <h2 id="diagrama_classes"> Diagrama de Classes 📚 </h2>
-<img src="./readme/diagrama-classes.png">
+<img src="https://images2.imgbox.com/d0/21/4ogU4x5G_o.png">
 
 <h3>Entidade: Mail (E-mail Agendado)</h3>
 
