@@ -6,10 +6,10 @@ import { MailerSend } from 'mailersend';
 
 @Injectable()
 export class MailerSendService {
-  private readonly MAILSENDER_KEY = process.env.MAILSENDER_KEY;
+  private readonly MAILERSEND_KEY = process.env.MAILERSEND_KEY;
 
   private mailersend = new MailerSend({
-    apiKey: this.MAILSENDER_KEY,
+    apiKey: this.MAILERSEND_KEY,
   });
 
   async sendEmail(data: SendEmailInterface): Promise<boolean> {
