@@ -21,7 +21,7 @@ export class MailCron {
     for (const mail of mailList) {
         const data: SendEmailInterface = {
           from: {
-            email: 'no-reply@trial-7dnvo4dz33xl5r86.mlsender.net',
+            email: process.env.SENDGRID_EMAIL,
             name: 'Contato | chronomail',
           },
           to: [
