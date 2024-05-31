@@ -16,6 +16,8 @@
   
 <img src="https://images2.imgbox.com/f8/ff/0nMYpZPx_o.png">
 
+[Link]() para acessar a documentação do projeto
+
 </div>
 
 <div align="center">
@@ -54,33 +56,42 @@ e armazenará os dados em um banco de dados <strong>MySQL</strong>. Um cron job 
 <h2 id="requisitos"> Requisitos Funcionais e Requisitos Não Funcionais 📋 </h2>
 
 ### Requisitos Funcionais (RF) ✅:
-RF1: Agendamento de E-mails
+**RF1: Agendamento de E-mails:**
+
 Os usuários devem poder agendar e-mails fornecendo as seguintes informações: nome, email do destinatário, data de envio, assunto e mensagem
 
-RF2: Envio Automático de E-mails
+**RF2: Envio Automático de E-mails:**
+
 O sistema deve enviar automaticamente os e-mails na data e hora especificadas pelos usuários, por meio da integração com o SendGrid.
 
-RF3: Confirmação de Agendamento
+**RF3: Confirmação de Agendamento:**
+
 Os usuários devem receber uma confirmação após agendarem um e-mail, indicando que o agendamento foi bem-sucedido.
 
 
 ### Requisitos Não Funcionais (RNF) ❌:
-RNF1: Usabilidade
+**RNF1: Usabilidade:**
+
 A interface de usuário deve ser intuitiva, permitindo o agendamento de e-mails de maneira simples e direta.
 
-RNF2: Performance
+**RNF2: Performance:**
+
 O sistema deve processar rapidamente o agendamento e garantir o envio de e-mails no tempo agendado, sem atrasos.
 
-RNF3: Segurança
+**RNF3: Segurança:**
+
 As informações do usuário e o conteúdo do e-mail devem ser protegidos para garantir confidencialidade e integridade. Isso inclui a criptografia de dados sensíveis em trânsito e em repouso.
 
-RNF4: Escalabilidade
+**RNF4: Escalabilidade:**
+
 O sistema deve ser capaz de lidar com um aumento no volume de e-mails agendados sem perder desempenho.
 
-RNF5: Disponibilidade
+**RNF5: Disponibilidade:**
+
 O sistema deve estar disponível constantemente, permitindo que os usuários agendem e-mails a qualquer hora.
 
-RNF6: Conformidade
+**RNF6: Conformidade:**
+
 O sistema deve estar em conformidade com regulamentos de proteção de dados e privacidade, como o GDPR ou a LGPD.
 
 ---
@@ -168,50 +179,57 @@ avançadas.
 <h2 id="pre-requisitos"> Pré-requisitos para rodar o projeto 🛠️ </h2>
 Certifique-se de ter instalados antes de executar o projeto:
 
-- Node.js - (v.20.10.0)
-- npm - (v.10.2.3)
-- MySQL Server
+- **Node.js** - (v.20.10.0)
+- **npm** - (v.10.5.2)
 
 ---
 
 <h2 id="back-end">Configuração e Instalação Back-end ⚙️ </h2>
-1. Clone este repositório para o seu ambiente local.
 
-2. Navegue até a pasta back-end e execute o seguinte comando para instalar as dependências (Node 20):
-```bash
-npm install
-```
+1. **Clone** este repositório para o seu ambiente local.
 
-3. Inicie o servidor NestJS com o seguinte comando:
 ```bash
-npm start
+git clone https://github.com/htamagnus/chronomail-backend-nestjs-tcc.git
 ```
 
 ---
 
-### Configuração MySQL 🗃️
-- Crie um banco de dados MySQL para o projeto;
+2. Navegue até a pasta back-end e execute o seguinte comando para **instalar** as dependências (Node 20):
+```bash
+npm install
+```
+
+---
+
+3. **Configuração MySQL** 🗃️
+- Crie e configure um banco de dados MySQL no [railway](https://docs.railway.app/guides/mysql) para o projeto;
 - Atualize as configurações do banco de dados no arquivo .env na raiz da pasta back-end;
 ```bash
-PORT=
 MYSQLUSER=
 MYSQLPORT=
 MYSQLPASSWORD=
 MYSQLHOST=
 MYSQLDATABASE=
+```
+
+---
+
+4. **Configuração MailerSend** 📧
+- Crie uma conta no [MailerSend](https://www.mailersend.com/help/getting-started) e crie uma [APIKey](https://www.mailersend.com/help/managing-api-tokens) para o projeto;
+- Configure um domínio para o email e insira no projeto;
+
+```bash
+MAILERSEND_KEY= 
+MAILERSEND_EMAIL=
 
 ```
 
 ---
 
-### Configuração MailerSend 📧
-- Crie uma conta no MailerSend e crie uma API key para o projeto;
-- Configure um domínio para o email e insira no projeto;
-- Insira a api key no env:
-```bash
-MAILSENDER_KEY= 
-MAILSENDER_URL=
+5. Inicie o **servidor NestJS** com o seguinte comando:
 
+```bash
+npm run start:dev
 ```
 
 ---
