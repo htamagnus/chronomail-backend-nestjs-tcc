@@ -17,6 +17,7 @@
 <img src="https://images2.imgbox.com/f8/ff/0nMYpZPx_o.png">
 
 [Link](https://chronomail-backend-nestjs-tcc-production.up.railway.app) para acessar a documentação do projeto
+(temporariamente fora do ar pois expirou o período grátis de hospedagem do site)
 
 </div>
 
